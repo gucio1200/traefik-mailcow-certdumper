@@ -37,7 +37,7 @@ if (runAtStart) {
 function dumpCerts() {
     try {
         const acmeJson = JSON.parse(fs.readFileSync(acmeJsonPath, 'utf8'))
-        const cert = acmeJson.certHttp.Certificates.find(element => element.domain.main === domain)
+        const cert = acmeJson.le.Certificates.find(element => element.domain.main === domain)
 
         if (!cert) {
             logger.info(`No certificate for '${domain}' found`)
